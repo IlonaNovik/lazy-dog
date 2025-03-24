@@ -1,9 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { LandingFeatures } from "@/components/landing-features";
 import { LandingHero } from "@/components/landing-hero";
-import { LandingFooter } from "@/components/landing-footer";
 
 export default function Home() {
   return (
