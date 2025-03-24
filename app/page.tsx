@@ -1,18 +1,32 @@
+
+'use client';
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { LandingFeatures } from "@/components/landing-features"
 import { LandingHero } from "@/components/landing-hero"
 import { LandingFooter } from "@/components/landing-footer"
+import { useCallback } from "react"
+import { useVoiceAgent } from "./voice-agent";
 
 export default function Home() {
+
+  const {isOpen, startSession, stopSession} = useVoiceAgent();
+
+  const toggleSession = useCallback(() => {
+    isOpen ? stopSession() : startSession();
+    console.log('isOpen - toghle', isOpen);
+
+  },[])
+  
   return (
     <div className="flex flex-col min-h-screen bg-yoga-sand/30 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-noise opacity-30 mix-blend-soft-light pointer-events-none"></div>
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-yoga-clay/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-yoga-sage/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
-
+      <Button onClick={toggleSession}>{isOpen ? 'STOP' : 'START'}</Button>
       <header className="relative z-10 py-6">
         <div className="container flex items-center justify-between">
           <div className="flex items-center gap-3">
