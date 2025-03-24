@@ -31,38 +31,13 @@ export default function Home() {
             </span>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8">
-            <Link
-              href="#features"
-              className="text-yoga-earth/80 hover:text-yoga-earth transition-colors relative group"
-            >
-              Features
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yoga-clay group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <Link
-              href="#how-it-works"
-              className="text-yoga-earth/80 hover:text-yoga-earth transition-colors relative group"
-            >
-              How It Works
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yoga-clay group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <Link
-              href="#testimonials"
-              className="text-yoga-earth/80 hover:text-yoga-earth transition-colors relative group"
-            >
-              Testimonials
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yoga-clay group-hover:w-full transition-all duration-300"></span>
-            </Link>
-          </nav>
+
         </div>
       </header>
 
       <main className="flex-1 relative z-10">
         <LandingHero />
-        <LandingFeatures />
       </main>
-
-      <LandingFooter />
     </div>
   );
 }
