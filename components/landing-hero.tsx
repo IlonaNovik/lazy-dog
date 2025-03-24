@@ -1,7 +1,14 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ShieldCheck, Camera, ThumbsUp, BookOpen, LineChart, Smartphone } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  ShieldCheck,
+  Camera,
+  ThumbsUp,
+  BookOpen,
+  LineChart,
+  Smartphone,
+} from "lucide-react";
 
 export function LandingHero() {
   return (
@@ -14,46 +21,45 @@ export function LandingHero() {
       <div className="container relative">
         <div className="grid md:grid-cols-12 gap-4 items-center">
           <div className="md:col-span-6 lg:col-span-5 space-y-8 relative z-10">
-
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-yoga-earth leading-tight">
               Exercises
             </h1>
-          
+
             <FeatureCard
-            icon={<Camera className="h-6 w-6" />}
-            title="Real-Time Posture Analysis"
-            color="terracotta"
-          />
-          <FeatureCard
-            icon={<ThumbsUp className="h-6 w-6" />}
-            title="Personalized Adjustments"
-            description="Receive tailored suggestions to improve specific aspects of each pose"
-            color="sage"
-          />
-          <FeatureCard
-            icon={<BookOpen className="h-6 w-6" />}
-            title="Guided Practice Sessions"
-            description="Follow along with instructor-led routines optimized for your skill level"
-            color="sky"
-          />
-          <FeatureCard
-            icon={<LineChart className="h-6 w-6" />}
-            title="Track Your Progress"
-            description="Monitor your improvement over time with detailed analytics and insights"
-            color="dawn"
-          />
-          <FeatureCard
-            icon={<Smartphone className="h-6 w-6" />}
-            title="Practice Anywhere"
-            description="Use on any device with a camera - perfect for home, studio, or travel"
-            color="stone"
-          />
-          <FeatureCard
-            icon={<ShieldCheck className="h-6 w-6" />}
-            title="Privacy-Focused"
-            description="All processing happens on your device - your video never leaves your control"
-            color="dusk"
-          />
+              icon={<Camera className="h-6 w-6" />}
+              title="Real-Time Posture Analysis"
+              color="terracotta"
+            />
+            <FeatureCard
+              icon={<ThumbsUp className="h-6 w-6" />}
+              title="Personalized Adjustments"
+              description="Receive tailored suggestions to improve specific aspects of each pose"
+              color="sage"
+            />
+            <FeatureCard
+              icon={<BookOpen className="h-6 w-6" />}
+              title="Guided Practice Sessions"
+              description="Follow along with instructor-led routines optimized for your skill level"
+              color="sky"
+            />
+            <FeatureCard
+              icon={<LineChart className="h-6 w-6" />}
+              title="Track Your Progress"
+              description="Monitor your improvement over time with detailed analytics and insights"
+              color="dawn"
+            />
+            <FeatureCard
+              icon={<Smartphone className="h-6 w-6" />}
+              title="Practice Anywhere"
+              description="Use on any device with a camera - perfect for home, studio, or travel"
+              color="stone"
+            />
+            <FeatureCard
+              icon={<ShieldCheck className="h-6 w-6" />}
+              title="Privacy-Focused"
+              description="All processing happens on your device - your video never leaves your control"
+              color="dusk"
+            />
 
             {/* <div className="flex flex-col sm:flex-row gap-4">
               <Button
@@ -169,19 +175,19 @@ export function LandingHero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
 
 function FeatureCard({ icon, title, color }) {
   const colorMap = {
-    terracotta: "bg-yoga-terracotta/10 text-yoga-terracotta border-yoga-terracotta/20",
+    terracotta:
+      "bg-yoga-terracotta/10 text-yoga-terracotta border-yoga-terracotta/20",
     sage: "bg-yoga-sage/10 text-yoga-moss border-yoga-sage/20",
     sky: "bg-yoga-sky/10 text-yoga-sky border-yoga-sky/20",
     dawn: "bg-yoga-dawn/10 text-yoga-sunset border-yoga-dawn/20",
     stone: "bg-yoga-stone/10 text-yoga-stone border-yoga-stone/20",
     dusk: "bg-yoga-dusk/10 text-yoga-dusk border-yoga-dusk/20",
-  }
+  };
 
   return (
     <div className="group relative">
@@ -198,5 +204,5 @@ function FeatureCard({ icon, title, color }) {
         <h3 className="text-xl font-semibold text-yoga-earth">{title}</h3>
       </div>
     </div>
-  )
+  );
 }

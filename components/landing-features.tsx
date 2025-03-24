@@ -1,5 +1,12 @@
-import { ShieldCheck, Camera, ThumbsUp, BookOpen, LineChart, Smartphone } from "lucide-react"
-import Image from "next/image"
+import {
+  ShieldCheck,
+  Camera,
+  ThumbsUp,
+  BookOpen,
+  LineChart,
+  Smartphone,
+} from "lucide-react";
+import Image from "next/image";
 
 export function LandingFeatures() {
   return (
@@ -10,7 +17,6 @@ export function LandingFeatures() {
       <div className="absolute left-0 bottom-0 w-[300px] h-[300px] bg-yoga-sky/10 rounded-full blur-3xl"></div>
 
       <div className="container relative">
-
         <div className="grid md:grid-cols-2 lg:grid-cols-3">
           <FeatureCard
             icon={<Camera className="h-6 w-6" />}
@@ -72,10 +78,14 @@ export function LandingFeatures() {
                   </svg>
                   Featured
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-yoga-earth mb-4">Personalized Yoga Journey</h3>
+                <h3 className="text-2xl md:text-3xl font-bold text-yoga-earth mb-4">
+                  Personalized Yoga Journey
+                </h3>
                 <p className="text-yoga-earth/70 mb-6">
-                  YogaAlign adapts to your unique body and practice level, providing customized guidance that evolves as
-                  you progress. Our AI understands your specific challenges and helps you overcome them.
+                  YogaAlign adapts to your unique body and practice level,
+                  providing customized guidance that evolves as you progress.
+                  Our AI understands your specific challenges and helps you
+                  overcome them.
                 </p>
                 <ul className="space-y-3">
                   {[
@@ -134,7 +144,9 @@ export function LandingFeatures() {
                         <path d="m9 12 2 2 4-4"></path>
                       </svg>
                     </div>
-                    <div className="text-yoga-earth font-medium text-sm">Progress Update</div>
+                    <div className="text-yoga-earth font-medium text-sm">
+                      Progress Update
+                    </div>
                   </div>
                   <p className="text-yoga-earth/70 text-xs">
                     Your downward dog alignment has improved by 23% this month!
@@ -146,18 +158,19 @@ export function LandingFeatures() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function FeatureCard({ icon, title, description, color }) {
   const colorMap = {
-    terracotta: "bg-yoga-terracotta/10 text-yoga-terracotta border-yoga-terracotta/20",
+    terracotta:
+      "bg-yoga-terracotta/10 text-yoga-terracotta border-yoga-terracotta/20",
     sage: "bg-yoga-sage/10 text-yoga-moss border-yoga-sage/20",
     sky: "bg-yoga-sky/10 text-yoga-sky border-yoga-sky/20",
     dawn: "bg-yoga-dawn/10 text-yoga-sunset border-yoga-dawn/20",
     stone: "bg-yoga-stone/10 text-yoga-stone border-yoga-stone/20",
     dusk: "bg-yoga-dusk/10 text-yoga-dusk border-yoga-dusk/20",
-  }
+  };
 
   return (
     <div className="group relative">
@@ -176,12 +189,13 @@ function FeatureCard({ icon, title, description, color }) {
       </div>
 
       {/* Decorative corner accent */}
-      <div className={`absolute top-0 right-0 w-16 h-16 overflow-hidden rounded-tr-[1.5rem]`}>
+      <div
+        className={`absolute top-0 right-0 w-16 h-16 overflow-hidden rounded-tr-[1.5rem]`}
+      >
         <div
           className={`absolute top-0 right-0 w-4 h-4 rounded-full -translate-x-4 translate-y-4 ${colorMap[color].split(" ")[0]}`}
         ></div>
       </div>
     </div>
-  )
+  );
 }
-

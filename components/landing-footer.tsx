@@ -1,5 +1,5 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
 export function LandingFooter() {
   return (
@@ -13,24 +13,33 @@ export function LandingFooter() {
             <div className="flex items-center gap-3">
               <div className="relative w-10 h-10">
                 <div className="absolute inset-0 bg-yoga-clay rounded-full opacity-30 animate-pulse-slow"></div>
-                <Image src="/logo.svg" alt="YogaAlign Logo" width={40} height={40} className="relative z-10" />
+                <Image
+                  src="/logo.svg"
+                  alt="YogaAlign Logo"
+                  width={40}
+                  height={40}
+                  className="relative z-10"
+                />
               </div>
               <span className="font-medium text-xl">YogaAlign</span>
             </div>
             <p className="text-white/70 max-w-xs">
-              Perfect your yoga practice with real-time AI guidance and personalized feedback.
+              Perfect your yoga practice with real-time AI guidance and
+              personalized feedback.
             </p>
             <div className="flex gap-4">
-              {["twitter", "facebook", "instagram", "youtube"].map((platform) => (
-                <Link
-                  key={platform}
-                  href={`#${platform}`}
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                >
-                  <span className="sr-only">{platform}</span>
-                  <div className="w-5 h-5 bg-white/90 rounded-sm"></div>
-                </Link>
-              ))}
+              {["twitter", "facebook", "instagram", "youtube"].map(
+                (platform) => (
+                  <Link
+                    key={platform}
+                    href={`#${platform}`}
+                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                  >
+                    <span className="sr-only">{platform}</span>
+                    <div className="w-5 h-5 bg-white/90 rounded-sm"></div>
+                  </Link>
+                ),
+              )}
             </div>
           </div>
 
@@ -96,21 +105,31 @@ export function LandingFooter() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-white/50 text-sm">© {new Date().getFullYear()} YogaAlign. All rights reserved.</p>
+          <p className="text-white/50 text-sm">
+            © {new Date().getFullYear()} YogaAlign. All rights reserved.
+          </p>
           <div className="flex gap-6">
-            <Link href="#" className="text-white/50 hover:text-white text-sm transition-colors">
+            <Link
+              href="#"
+              className="text-white/50 hover:text-white text-sm transition-colors"
+            >
               Privacy Policy
             </Link>
-            <Link href="#" className="text-white/50 hover:text-white text-sm transition-colors">
+            <Link
+              href="#"
+              className="text-white/50 hover:text-white text-sm transition-colors"
+            >
               Terms of Service
             </Link>
-            <Link href="#" className="text-white/50 hover:text-white text-sm transition-colors">
+            <Link
+              href="#"
+              className="text-white/50 hover:text-white text-sm transition-colors"
+            >
               Cookies
             </Link>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
-

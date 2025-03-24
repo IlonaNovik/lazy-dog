@@ -1,7 +1,7 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft, Smartphone, Laptop, CheckCircle2 } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Smartphone, Laptop, CheckCircle2 } from "lucide-react";
 
 export default function GetStarted() {
   return (
@@ -39,10 +39,12 @@ export default function GetStarted() {
             Get Started
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-yoga-earth mb-6">
-            Begin Your <span className="text-yoga-terracotta">YogaAlign</span> Journey
+            Begin Your <span className="text-yoga-terracotta">YogaAlign</span>{" "}
+            Journey
           </h1>
           <p className="text-yoga-earth/70 text-lg max-w-2xl mx-auto">
-            Choose how you'd like to experience YogaAlign and begin your path to improved yoga practice
+            Choose how you'd like to experience YogaAlign and begin your path to
+            improved yoga practice
           </p>
         </div>
 
@@ -57,7 +59,9 @@ export default function GetStarted() {
                 <div className="w-12 h-12 rounded-2xl bg-yoga-clay/10 text-yoga-terracotta flex items-center justify-center">
                   <Smartphone className="h-6 w-6" />
                 </div>
-                <h2 className="text-2xl font-bold text-yoga-terracotta">Mobile App</h2>
+                <h2 className="text-2xl font-bold text-yoga-terracotta">
+                  Mobile App
+                </h2>
               </div>
 
               <div className="relative h-[200px] mb-8 rounded-xl overflow-hidden">
@@ -163,16 +167,20 @@ export default function GetStarted() {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-yoga-earth/60 mb-4">Both versions include a 14-day free trial. No credit card required.</p>
+          <p className="text-yoga-earth/60 mb-4">
+            Both versions include a 14-day free trial. No credit card required.
+          </p>
           <p>
             Already have an account?{" "}
-            <Link href="/login" className="text-yoga-terracotta hover:text-yoga-terracotta/80 font-medium">
+            <Link
+              href="/login"
+              className="text-yoga-terracotta hover:text-yoga-terracotta/80 font-medium"
+            >
               Sign in
             </Link>
           </p>
         </div>
       </div>
     </div>
-  )
+  );
 }
-

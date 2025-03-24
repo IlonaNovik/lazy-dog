@@ -1,9 +1,9 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { LandingFeatures } from "@/components/landing-features"
-import { LandingHero } from "@/components/landing-hero"
-import { LandingFooter } from "@/components/landing-footer"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { LandingFeatures } from "@/components/landing-features";
+import { LandingHero } from "@/components/landing-hero";
+import { LandingFooter } from "@/components/landing-footer";
 
 export default function Home() {
   return (
@@ -18,9 +18,17 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <div className="relative w-10 h-10 overflow-visible">
               <div className="absolute inset-0 bg-yoga-clay rounded-full opacity-20 animate-pulse-slow"></div>
-              <Image src="/logo.svg" alt="YogaAlign Logo" width={40} height={40} className="relative z-10" />
+              <Image
+                src="/logo.svg"
+                alt="YogaAlign Logo"
+                width={40}
+                height={40}
+                className="relative z-10"
+              />
             </div>
-            <span className="font-medium text-xl text-yoga-earth">YogaAlign</span>
+            <span className="font-medium text-xl text-yoga-earth">
+              YogaAlign
+            </span>
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -56,6 +64,5 @@ export default function Home() {
 
       <LandingFooter />
     </div>
-  )
+  );
 }
-

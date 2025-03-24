@@ -1,78 +1,118 @@
-"use client"
+"use client";
 
-import { useState, useRef, useEffect } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Camera, Video, Pause, Play, Check } from "lucide-react"
-import { WebappHeader } from "@/components/webapp-header"
-import { WebappSidebar } from "@/components/webapp-sidebar"
+import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
+import { ArrowLeft, Camera, Video, Pause, Play, Check } from "lucide-react";
+import { WebappHeader } from "@/components/webapp-header";
+import { WebappSidebar } from "@/components/webapp-sidebar";
 
 export default function Webapp() {
-  const [isCapturing, setIsCapturing] = useState(false)
-  const [selectedPose, setSelectedPose] = useState("warrior2")
-  const videoRef = useRef(null)
-  const canvasRef = useRef(null)
+  const [isCapturing, setIsCapturing] = useState(false);
+  const [selectedPose, setSelectedPose] = useState("warrior2");
+  const videoRef = useRef(null);
+  const canvasRef = useRef(null);
 
   // Simulated pose feedback - in a real app this would come from a pose detection algorithm
   const poseFeedback = {
     warrior2: [
-      { part: "arms", message: "Extend arms fully parallel to the floor", status: "warning" },
-      { part: "front knee", message: "Bend front knee to 90 degrees", status: "error" },
-      { part: "torso", message: "Keep torso centered and upright", status: "success" },
+      {
+        part: "arms",
+        message: "Extend arms fully parallel to the floor",
+        status: "warning",
+      },
+      {
+        part: "front knee",
+        message: "Bend front knee to 90 degrees",
+        status: "error",
+      },
+      {
+        part: "torso",
+        message: "Keep torso centered and upright",
+        status: "success",
+      },
     ],
     downdog: [
-      { part: "arms", message: "Press firmly through hands", status: "success" },
-      { part: "legs", message: "Work towards straightening legs", status: "warning" },
-      { part: "hips", message: "Lift hips high towards ceiling", status: "success" },
+      {
+        part: "arms",
+        message: "Press firmly through hands",
+        status: "success",
+      },
+      {
+        part: "legs",
+        message: "Work towards straightening legs",
+        status: "warning",
+      },
+      {
+        part: "hips",
+        message: "Lift hips high towards ceiling",
+        status: "success",
+      },
     ],
     tree: [
-      { part: "standing foot", message: "Press firmly into the floor", status: "success" },
-      { part: "knee", message: "Keep knee pointing to the side", status: "warning" },
+      {
+        part: "standing foot",
+        message: "Press firmly into the floor",
+        status: "success",
+      },
+      {
+        part: "knee",
+        message: "Keep knee pointing to the side",
+        status: "warning",
+      },
       { part: "gaze", message: "Find a steady focal point", status: "success" },
     ],
-  }
+  };
 
   const handleStartCapture = async () => {
     if (videoRef.current) {
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true })
-        videoRef.current.srcObject = stream
-        setIsCapturing(true)
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+        });
+        videoRef.current.srcObject = stream;
+        setIsCapturing(true);
       } catch (err) {
-        console.error("Error accessing camera:", err)
+        console.error("Error accessing camera:", err);
       }
     }
-  }
+  };
 
   const handleStopCapture = () => {
     if (videoRef.current && videoRef.current.srcObject) {
-      const tracks = videoRef.current.srcObject.getTracks()
-      tracks.forEach((track) => track.stop())
-      videoRef.current.srcObject = null
-      setIsCapturing(false)
+      const tracks = videoRef.current.srcObject.getTracks();
+      tracks.forEach((track) => track.stop());
+      videoRef.current.srcObject = null;
+      setIsCapturing(false);
     }
-  }
+  };
 
   const toggleCapture = () => {
     if (isCapturing) {
-      handleStopCapture()
+      handleStopCapture();
     } else {
-      handleStartCapture()
+      handleStartCapture();
     }
-  }
+  };
 
   useEffect(() => {
     return () => {
       // Clean up camera access when component unmounts
       if (videoRef.current && videoRef.current.srcObject) {
-        const tracks = videoRef.current.srcObject.getTracks()
-        tracks.forEach((track) => track.stop())
+        const tracks = videoRef.current.srcObject.getTracks();
+        tracks.forEach((track) => track.stop());
       }
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-yoga-sand/30 relative">
@@ -98,8 +138,12 @@ export default function Webapp() {
           </div>
 
           <div className="mb-8">
-            <h1 className="text-2xl md:text-3xl font-bold text-yoga-earth mb-2">Pose Practice</h1>
-            <p className="text-yoga-earth/70">Select a pose and use your camera for real-time feedback</p>
+            <h1 className="text-2xl md:text-3xl font-bold text-yoga-earth mb-2">
+              Pose Practice
+            </h1>
+            <p className="text-yoga-earth/70">
+              Select a pose and use your camera for real-time feedback
+            </p>
           </div>
 
           <div className="mb-8">
@@ -109,8 +153,12 @@ export default function Webapp() {
                   <SelectValue placeholder="Select a pose" />
                 </SelectTrigger>
                 <SelectContent className="bg-white rounded-xl border-yoga-sage/30">
-                  <SelectItem value="warrior2">Warrior II (Virabhadrasana II)</SelectItem>
-                  <SelectItem value="downdog">Downward-Facing Dog (Adho Mukha Svanasana)</SelectItem>
+                  <SelectItem value="warrior2">
+                    Warrior II (Virabhadrasana II)
+                  </SelectItem>
+                  <SelectItem value="downdog">
+                    Downward-Facing Dog (Adho Mukha Svanasana)
+                  </SelectItem>
                   <SelectItem value="tree">Tree Pose (Vrksasana)</SelectItem>
                 </SelectContent>
               </Select>
@@ -164,13 +212,19 @@ export default function Webapp() {
                     <div className="relative p-4 rotate-1 transform">
                       <div className="aspect-video bg-yoga-clay/5 rounded-xl overflow-hidden flex items-center justify-center">
                         {isCapturing ? (
-                          <video ref={videoRef} autoPlay className="w-full h-full object-cover" />
+                          <video
+                            ref={videoRef}
+                            autoPlay
+                            className="w-full h-full object-cover"
+                          />
                         ) : (
                           <div className="text-center p-6">
                             <div className="w-16 h-16 rounded-full bg-yoga-terracotta/10 flex items-center justify-center text-yoga-terracotta mx-auto mb-4">
                               <Camera className="h-8 w-8" />
                             </div>
-                            <p className="text-yoga-earth/70">Click "Start Camera" to begin pose analysis</p>
+                            <p className="text-yoga-earth/70">
+                              Click "Start Camera" to begin pose analysis
+                            </p>
                           </div>
                         )}
                         <canvas
@@ -219,7 +273,9 @@ export default function Webapp() {
 
             <div>
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-yoga-earth">Pose Feedback</h2>
+                <h2 className="text-xl font-bold text-yoga-earth">
+                  Pose Feedback
+                </h2>
                 <Badge className="font-normal bg-yoga-terracotta/10 text-yoga-terracotta border-none rounded-full px-4">
                   Real-time
                 </Badge>
@@ -228,13 +284,19 @@ export default function Webapp() {
               <div className="space-y-4">
                 {poseFeedback[selectedPose]?.map((feedback, index) => {
                   const statusColors = {
-                    success: "bg-yoga-sage/10 border-yoga-sage/20 text-yoga-moss",
-                    warning: "bg-yoga-dawn/10 border-yoga-dawn/20 text-yoga-sunset",
-                    error: "bg-yoga-terracotta/10 border-yoga-terracotta/20 text-yoga-terracotta",
-                  }
+                    success:
+                      "bg-yoga-sage/10 border-yoga-sage/20 text-yoga-moss",
+                    warning:
+                      "bg-yoga-dawn/10 border-yoga-dawn/20 text-yoga-sunset",
+                    error:
+                      "bg-yoga-terracotta/10 border-yoga-terracotta/20 text-yoga-terracotta",
+                  };
 
                   return (
-                    <div key={index} className={`p-4 border rounded-xl bg-white ${statusColors[feedback.status]}`}>
+                    <div
+                      key={index}
+                      className={`p-4 border rounded-xl bg-white ${statusColors[feedback.status]}`}
+                    >
                       <div className="flex items-start gap-3">
                         <div
                           className={`mt-0.5 shrink-0 rounded-full p-1 
@@ -250,11 +312,13 @@ export default function Webapp() {
                         </div>
                         <div>
                           <p className="font-medium">{feedback.part}</p>
-                          <p className="text-sm text-yoga-earth/70">{feedback.message}</p>
+                          <p className="text-sm text-yoga-earth/70">
+                            {feedback.message}
+                          </p>
                         </div>
                       </div>
                     </div>
-                  )
+                  );
                 })}
               </div>
 
@@ -271,12 +335,18 @@ export default function Webapp() {
                     </h3>
                     <div className="flex items-center mb-4">
                       <div className="h-4 flex-1 bg-yoga-sand/30 rounded-full overflow-hidden">
-                        <div className="h-full bg-yoga-terracotta rounded-full" style={{ width: "65%" }} />
+                        <div
+                          className="h-full bg-yoga-terracotta rounded-full"
+                          style={{ width: "65%" }}
+                        />
                       </div>
-                      <span className="ml-4 font-medium text-yoga-terracotta">65%</span>
+                      <span className="ml-4 font-medium text-yoga-terracotta">
+                        65%
+                      </span>
                     </div>
                     <p className="text-sm text-yoga-earth/70">
-                      Great progress! Focus on your knee alignment to improve your score.
+                      Great progress! Focus on your knee alignment to improve
+                      your score.
                     </p>
 
                     {/* Decorative corner accent */}
@@ -291,6 +361,5 @@ export default function Webapp() {
         </main>
       </div>
     </div>
-  )
+  );
 }
-

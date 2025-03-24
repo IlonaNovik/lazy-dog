@@ -1,16 +1,26 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft, Camera, Menu, Bell, User, Home, BookOpen, BarChart4, Info } from "lucide-react"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import {
+  ArrowLeft,
+  Camera,
+  Menu,
+  Bell,
+  User,
+  Home,
+  BookOpen,
+  BarChart4,
+  Info,
+} from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
 
 export default function MobileApp() {
-  const [activeTab, setActiveTab] = useState("practice")
+  const [activeTab, setActiveTab] = useState("practice");
 
   return (
     <div className="flex flex-col min-h-screen bg-yoga-sand/30 relative">
@@ -40,9 +50,17 @@ export default function MobileApp() {
             <Link href="/mobile" className="flex items-center gap-2">
               <div className="relative w-8 h-8 overflow-visible">
                 <div className="absolute inset-0 bg-yoga-clay rounded-full opacity-20 animate-pulse-slow"></div>
-                <Image src="/logo.svg" alt="YogaAlign Logo" width={32} height={32} className="relative z-10" />
+                <Image
+                  src="/logo.svg"
+                  alt="YogaAlign Logo"
+                  width={32}
+                  height={32}
+                  className="relative z-10"
+                />
               </div>
-              <span className="font-medium text-lg text-yoga-earth">YogaAlign</span>
+              <span className="font-medium text-lg text-yoga-earth">
+                YogaAlign
+              </span>
             </Link>
           </div>
           <div className="flex items-center gap-2">
@@ -156,14 +174,23 @@ export default function MobileApp() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-medium text-yoga-earth">Morning Flow</h3>
-                    <p className="text-xs text-yoga-earth/60">15 min • 8 poses</p>
+                    <h3 className="font-medium text-yoga-earth">
+                      Morning Flow
+                    </h3>
+                    <p className="text-xs text-yoga-earth/60">
+                      15 min • 8 poses
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex justify-between items-center mt-4">
-                  <Badge className="bg-yoga-sage/10 text-yoga-moss border-none rounded-full px-3">Beginner</Badge>
-                  <Button size="sm" className="bg-yoga-moss hover:bg-yoga-moss/90 text-white rounded-full">
+                  <Badge className="bg-yoga-sage/10 text-yoga-moss border-none rounded-full px-3">
+                    Beginner
+                  </Badge>
+                  <Button
+                    size="sm"
+                    className="bg-yoga-moss hover:bg-yoga-moss/90 text-white rounded-full"
+                  >
                     Start
                   </Button>
                 </div>
@@ -193,8 +220,12 @@ export default function MobileApp() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-medium text-yoga-earth">Evening Relaxation</h3>
-                    <p className="text-xs text-yoga-earth/60">20 min • 10 poses</p>
+                    <h3 className="font-medium text-yoga-earth">
+                      Evening Relaxation
+                    </h3>
+                    <p className="text-xs text-yoga-earth/60">
+                      20 min • 10 poses
+                    </p>
                   </div>
                 </div>
 
@@ -202,7 +233,10 @@ export default function MobileApp() {
                   <Badge className="bg-yoga-terracotta/10 text-yoga-terracotta border-none rounded-full px-3">
                     All Levels
                   </Badge>
-                  <Button size="sm" className="bg-yoga-terracotta hover:bg-yoga-terracotta/90 text-white rounded-full">
+                  <Button
+                    size="sm"
+                    className="bg-yoga-terracotta hover:bg-yoga-terracotta/90 text-white rounded-full"
+                  >
                     Start
                   </Button>
                 </div>
@@ -215,7 +249,9 @@ export default function MobileApp() {
               <div className="w-16 h-16 rounded-full bg-yoga-sky/10 flex items-center justify-center text-yoga-sky mb-4">
                 <Info className="h-8 w-8" />
               </div>
-              <h3 className="font-medium text-lg mb-2 text-yoga-earth">No favorites yet</h3>
+              <h3 className="font-medium text-lg mb-2 text-yoga-earth">
+                No favorites yet
+              </h3>
               <p className="text-yoga-earth/70 mb-6 max-w-xs mx-auto">
                 Save your favorite poses and sequences for quick access
               </p>
@@ -250,8 +286,12 @@ export default function MobileApp() {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-yoga-earth/80 to-transparent flex flex-col justify-end p-6 z-20">
-                  <h3 className="text-white font-medium text-lg">Evening Cool Down</h3>
-                  <p className="text-white/80 text-sm mb-4">Continue where you left off</p>
+                  <h3 className="text-white font-medium text-lg">
+                    Evening Cool Down
+                  </h3>
+                  <p className="text-white/80 text-sm mb-4">
+                    Continue where you left off
+                  </p>
                   <Button className="bg-white text-yoga-terracotta hover:bg-white/90 rounded-full w-full">
                     Resume
                   </Button>
@@ -299,7 +339,7 @@ export default function MobileApp() {
         </nav>
       </footer>
     </div>
-  )
+  );
 }
 
 function PoseCard({ title, sanskritName, difficulty, imageUrl, color }) {
@@ -308,7 +348,8 @@ function PoseCard({ title, sanskritName, difficulty, imageUrl, color }) {
       bg: "bg-yoga-terracotta/10",
       text: "text-yoga-terracotta",
       button: "bg-yoga-terracotta hover:bg-yoga-terracotta/90 text-white",
-      outline: "border-yoga-terracotta text-yoga-terracotta hover:bg-yoga-terracotta/10",
+      outline:
+        "border-yoga-terracotta text-yoga-terracotta hover:bg-yoga-terracotta/10",
     },
     sage: {
       bg: "bg-yoga-sage/10",
@@ -322,9 +363,9 @@ function PoseCard({ title, sanskritName, difficulty, imageUrl, color }) {
       button: "bg-yoga-sky hover:bg-yoga-sky/90 text-white",
       outline: "border-yoga-sky text-yoga-sky hover:bg-yoga-sky/10",
     },
-  }
+  };
 
-  const colors = colorMap[color] || colorMap.terracotta
+  const colors = colorMap[color] || colorMap.terracotta;
 
   return (
     <div className="relative group">
@@ -334,8 +375,15 @@ function PoseCard({ title, sanskritName, difficulty, imageUrl, color }) {
       {/* Card content */}
       <div className="relative -rotate-1 transform">
         <div className="relative h-[180px] rounded-t-xl overflow-hidden">
-          <div className={`absolute inset-0 ${colors.bg} mix-blend-overlay z-10 opacity-40`}></div>
-          <Image src={imageUrl || "/placeholder.svg"} fill alt={title} className="object-cover" />
+          <div
+            className={`absolute inset-0 ${colors.bg} mix-blend-overlay z-10 opacity-40`}
+          ></div>
+          <Image
+            src={imageUrl || "/placeholder.svg"}
+            fill
+            alt={title}
+            className="object-cover"
+          />
         </div>
         <div className="p-5">
           <div className="flex justify-between items-start mb-3">
@@ -343,10 +391,18 @@ function PoseCard({ title, sanskritName, difficulty, imageUrl, color }) {
               <h3 className="font-medium text-yoga-earth">{title}</h3>
               <p className="text-xs text-yoga-earth/60">{sanskritName}</p>
             </div>
-            <Badge className={`${colors.bg} ${colors.text} border-none rounded-full px-3`}>{difficulty}</Badge>
+            <Badge
+              className={`${colors.bg} ${colors.text} border-none rounded-full px-3`}
+            >
+              {difficulty}
+            </Badge>
           </div>
           <div className="flex justify-between items-center mt-4">
-            <Button variant="outline" size="sm" className={`${colors.outline} rounded-full`}>
+            <Button
+              variant="outline"
+              size="sm"
+              className={`${colors.outline} rounded-full`}
+            >
               Details
             </Button>
             <Button size="sm" className={`gap-2 ${colors.button} rounded-full`}>
@@ -357,7 +413,7 @@ function PoseCard({ title, sanskritName, difficulty, imageUrl, color }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function MobileSidebar() {
@@ -368,7 +424,13 @@ function MobileSidebar() {
       <div className="flex items-center gap-3 mb-8">
         <div className="relative w-10 h-10 overflow-visible">
           <div className="absolute inset-0 bg-yoga-clay rounded-full opacity-20 animate-pulse-slow"></div>
-          <Image src="/logo.svg" alt="YogaAlign Logo" width={40} height={40} className="relative z-10" />
+          <Image
+            src="/logo.svg"
+            alt="YogaAlign Logo"
+            width={40}
+            height={40}
+            className="relative z-10"
+          />
         </div>
         <span className="font-medium text-xl text-yoga-earth">YogaAlign</span>
       </div>
@@ -407,6 +469,5 @@ function MobileSidebar() {
         </Link>
       </div>
     </div>
-  )
+  );
 }
-
