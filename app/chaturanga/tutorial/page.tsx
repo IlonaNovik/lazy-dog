@@ -6,6 +6,8 @@ import { Avatar } from "@/components/ui/avatar";
 import { useRouter } from "next/navigation";
 import { Card } from "@/components/ui/card";
 import { useConversation } from "@11labs/react";
+import Image from "next/image";
+import { MicrophoneAnimation } from "../microfone-animation";
 
 export default function Chaturanga() {
   const router = useRouter();
@@ -30,20 +32,27 @@ export default function Chaturanga() {
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false
-      startSession();
+      // startSession();
     }
   }, []);
 
   return (
     <div className="bg-yoga-sand/30 h-screen flex flex-col items-center justify-center">
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-yoga-earth leading-tight">
-        Let's talk about it
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-yoga-earth leading-tight mb-4">
+        Chaturanga tutorial
       </h1>
-      <Card
-        className="p-4 max-h-96 overflow-auto mx-auto"
+      <Image 
+        src="/chaturanga.gif"
+        alt="Chaturanga Tutorial"
+        width={500}
+        height={100}
+        className="rounded-md"
+        />
+      <div
         ref={chatRef}
       >
-        <div className="flex flex-col min-w-96 mx-16">
+        <MicrophoneAnimation />
+        {/* <div className="flex flex-col min-w-96 mx-16">
           {visibleMessages.map((msg, index) => (
             <div
               key={index}
@@ -69,8 +78,8 @@ export default function Chaturanga() {
               )}
             </div>
           ))}
-        </div>
-      </Card>
+        </div> */}
+      </div>
     </div>
   );
 }

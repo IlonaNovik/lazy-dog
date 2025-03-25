@@ -18,7 +18,7 @@ export function LandingHero() {
       <div className="container relative">
         <div className="grid md:grid-cols-12 gap-4 items-center">
           <div className="md:col-span-6 lg:col-span-5 space-y-8 relative z-10">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-yoga-earth leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-yoga-earth leading-tight mb-8">
               Exercises
             </h1>
             <Link href="/chaturanga/tutorial">
