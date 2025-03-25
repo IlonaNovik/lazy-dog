@@ -10,13 +10,6 @@ import { LandingHero } from '@/components/landing-hero';
 
 export default function Home() {
   const [agreed, setAgreed] = useState(false);
-
-  useEffect(() => {
-    const agreementStatus = Cookies.get('lazyDogTermsAgreed');
-    if (agreementStatus === 'true') {
-      setAgreed(true);
-    }
-  }, []);
   
   return (
     <div className="flex flex-col min-h-screen bg-yoga-sand/30 relative overflow-hidden">
