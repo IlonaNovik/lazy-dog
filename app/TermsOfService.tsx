@@ -7,7 +7,7 @@ const TermsOfService = ({ setAgreed }: {setAgreed: (agreed: true) => void }) => 
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg mb-8">
       <h1 className="text-3xl font-bold mb-4">Terms of Service</h1>
       <p className="mb-4">Welcome to LazyDog. By using our services, you agree to the following terms:</p>
       
@@ -28,9 +28,6 @@ const TermsOfService = ({ setAgreed }: {setAgreed: (agreed: true) => void }) => 
       
       <h2 className="text-xl font-semibold mt-4">6. Governing Law</h2>
       <p className="mb-4">These terms shall be governed by and construed in accordance with the laws of The Kingdom of the Netherlands.</p>
-      
-      <h2 className="text-xl font-semibold mt-4">7. Contact Information</h2>
-      <p className="mb-4">If you have any questions about these Terms, please contact us.</p>
 
       <button onClick={handleAgree} className="w-full mt-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
         Agree
