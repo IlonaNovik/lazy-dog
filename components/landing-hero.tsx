@@ -6,6 +6,7 @@ import {
   LineChart,
   Smartphone,
 } from "lucide-react";
+import Link from "next/link";
 
 export function LandingHero() {
   return (
@@ -20,12 +21,13 @@ export function LandingHero() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-yoga-earth leading-tight">
               Exercises
             </h1>
-
-            <FeatureCard
-              icon={<PersonStanding className="h-6 w-6" />}
-              title="Chaturanga"
-              color="terracotta"
-            />
+            <Link href="/chaturanga/tutorial">
+              <FeatureCard
+                icon={<PersonStanding className="h-6 w-6" />}
+                title="Chaturanga"
+                color="terracotta"
+              />
+            </Link>
             <FeatureCard
               icon={<ThumbsUp className="h-6 w-6" />}
               title="Personalized Adjustments"
@@ -76,7 +78,6 @@ function FeatureCard({ icon, title, color }) {
 
   return (
     <div className="group relative">
-
       <div className="absolute inset-0 bg-white rounded-[1.5rem] shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1"></div>
 
       {/* Card content */}
@@ -87,7 +88,6 @@ function FeatureCard({ icon, title, color }) {
           {icon}
         </div>
         <h3 className="text-xl font-semibold text-yoga-earth">{title}</h3>
-
       </div>
     </div>
   );
