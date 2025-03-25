@@ -11,7 +11,7 @@ const TermsOfService = ({ setAgreed }: {setAgreed: (agreed: true) => void }) => 
   return (
     <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg">
       <h1 className="text-3xl font-bold mb-4">Terms of Service</h1>
-      <p className="mb-4">Welcome to our Yoga app. By using our services, you agree to the following terms:</p>
+      <p className="mb-4">Welcome to LazyDog. By using our services, you agree to the following terms:</p>
       
       <h2 className="text-xl font-semibold mt-4">1. Acceptance of Terms</h2>
       <p className="mb-4">By accessing and using our application, you accept and agree to be bound by the terms and provisions of this agreement.</p>
