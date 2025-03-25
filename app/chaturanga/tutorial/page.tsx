@@ -11,7 +11,7 @@ export default function Chaturanga() {
   const isFirstRender = useRef(true);
 
   const { startSession, status, endSession } = useConversation({
-    agentId: "Z32ia3snE6dapfxi3aaM",
+    agentId: process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID!,
     onDisconnect: () => router.push("/chaturanga"),
     onMessage: (msg) => {
       if(msg.source === 'user') {
