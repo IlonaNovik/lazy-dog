@@ -5,8 +5,8 @@ import Cookies from 'js-cookie';
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import VoiceChat from "./voice-component";
 import TermsOfService from "./TermsOfService";
+import { LandingHero } from '@/components/landing-hero';
 
 export default function Home() {
   const [agreed, setAgreed] = useState(false);
@@ -24,7 +24,7 @@ export default function Home() {
       <div className="absolute inset-0 bg-noise opacity-30 mix-blend-soft-light pointer-events-none"></div>
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-yoga-clay/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-yoga-sage/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
-      {!agreed ? <TermsOfService setAgreed={setAgreed}/> : <VoiceChat/>}
+      {!agreed ? <TermsOfService setAgreed={setAgreed}/> : <LandingHero />}
       <header className="relative z-10 py-6">
         <div className="container flex items-center justify-between">
           <div className="flex items-center gap-3">
