@@ -7,6 +7,7 @@ import {
   Smartphone,
 } from "lucide-react";
 import Link from "next/link";
+import { ReactNode } from "react";
 
 export function LandingHero() {
   return (
@@ -31,31 +32,26 @@ export function LandingHero() {
             <FeatureCard
               icon={<ThumbsUp className="h-6 w-6" />}
               title="Personalized Adjustments"
-              description="Receive tailored suggestions to improve specific aspects of each pose"
               color="sage"
             />
             <FeatureCard
               icon={<BookOpen className="h-6 w-6" />}
               title="Guided Practice Sessions"
-              description="Follow along with instructor-led routines optimized for your skill level"
               color="sky"
             />
             <FeatureCard
               icon={<LineChart className="h-6 w-6" />}
               title="Track Your Progress"
-              description="Monitor your improvement over time with detailed analytics and insights"
               color="dawn"
             />
             <FeatureCard
               icon={<Smartphone className="h-6 w-6" />}
               title="Practice Anywhere"
-              description="Use on any device with a camera - perfect for home, studio, or travel"
               color="stone"
             />
             <FeatureCard
               icon={<ShieldCheck className="h-6 w-6" />}
               title="Privacy-Focused"
-              description="All processing happens on your device - your video never leaves your control"
               color="dusk"
             />
           </div>
@@ -65,17 +61,21 @@ export function LandingHero() {
   );
 }
 
-function FeatureCard({ icon, title, color }) {
-  const colorMap = {
-    terracotta:
-      "bg-yoga-terracotta/10 text-yoga-terracotta border-yoga-terracotta/20",
-    sage: "bg-yoga-sage/10 text-yoga-moss border-yoga-sage/20",
-    sky: "bg-yoga-sky/10 text-yoga-sky border-yoga-sky/20",
-    dawn: "bg-yoga-dawn/10 text-yoga-sunset border-yoga-dawn/20",
-    stone: "bg-yoga-stone/10 text-yoga-stone border-yoga-stone/20",
-    dusk: "bg-yoga-dusk/10 text-yoga-dusk border-yoga-dusk/20",
-  };
+const colorMap = {
+  terracotta:
+    "bg-yoga-terracotta/10 text-yoga-terracotta border-yoga-terracotta/20",
+  sage: "bg-yoga-sage/10 text-yoga-moss border-yoga-sage/20",
+  sky: "bg-yoga-sky/10 text-yoga-sky border-yoga-sky/20",
+  dawn: "bg-yoga-dawn/10 text-yoga-sunset border-yoga-dawn/20",
+  stone: "bg-yoga-stone/10 text-yoga-stone border-yoga-stone/20",
+  dusk: "bg-yoga-dusk/10 text-yoga-dusk border-yoga-dusk/20",
+};
 
+function FeatureCard({ icon, title, color }: {
+  icon: ReactNode,
+  title: string,
+  color: keyof typeof colorMap
+}) {
   return (
     <div className="group relative">
       <div className="absolute inset-0 bg-white rounded-[1.5rem] shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1"></div>
