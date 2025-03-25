@@ -3,10 +3,8 @@
 
 import Cookies from 'js-cookie';
 
-import Image from "next/image"
-import { useCallback, useEffect, useState } from "react"
-import { LandingHero } from "@/components/landing-hero";
-import { useConversation } from "@11labs/react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import VoiceChat from "./voice-component";
 import TermsOfService from "./TermsOfService";
 
@@ -41,7 +39,7 @@ export default function Home() {
               />
             </div>
             <span className="font-medium text-xl text-yoga-earth">
-              YogaAlign
+              Lazy dog
             </span>
           </div>
 
