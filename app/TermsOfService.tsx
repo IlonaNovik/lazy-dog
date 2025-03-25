@@ -4,8 +4,6 @@ import Cookies from 'js-cookie';
 const TermsOfService = ({ setAgreed }: {setAgreed: (agreed: true) => void }) => {
   const handleAgree = () => {
     setAgreed(true);
-    Cookies.set('lazyDogTermsAgreed', 'true', { expires: 365 }); // Cookie expires in 1 year
-    // Add any additional logic for when the user agrees to the terms
   };
 
   return (
